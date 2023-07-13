@@ -77,6 +77,10 @@ Contributions to the Waste Collection and Scheduling Application are welcome! If
 4. Push your changes to your forked repository.
 5. Submit a pull request to the main repository.
 
+## Waste Production Trends
+![GRAPH](https://www.epa.ie/media/epa-2020/resources/charts-and-graphs/waste/Household-waste-july-2022--2020update.png)
+
+The graph above illustrates the trends in waste production over time. This is where our application will be most useful as it is well-suited to cater for the waste management needs of individual households in a quick and effecient manner
 ## License
 
 The Waste Collection and Scheduling Application is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the application.
@@ -84,3 +88,5 @@ The Waste Collection and Scheduling Application is open-source software licensed
 ## Contact
 
 For any inquiries or support, please contact the project team at wasteapp@example.com.
+
+
