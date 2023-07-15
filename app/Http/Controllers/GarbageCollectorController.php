@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Operation;
+use Session;
 
 class GarbageCollectorController extends Controller
 {
@@ -14,20 +15,26 @@ class GarbageCollectorController extends Controller
         $pendingOperations = Operation::where('status', 'Pending')->get();
         return view('staff', compact('pendingOperations'));
     }
+
     public function updateStatus(Request $request, $id)
     {
         $operation = Operation::find($id);
 
         if ($operation) {
-            $operation->Status = $request->input('status');
+            $operation->status = $request->input('status');
             $operation->save();
-            return response()->json(['success' => true]);
+            
+            // Flash success message
+            Session::flash('success', 'Operation status updated successfully.');
+            
+            return redirect()->back();
         } else {
             return response()->json(['error' => 'Operation not found'], 404);
         }
-        
     }
-    
 }
+
+    
+
 
 

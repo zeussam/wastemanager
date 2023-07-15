@@ -38,7 +38,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pending">Collections</a></li>
                 </ul>
                 @auth
                 <form class="ml-auto" method="POST" action="{{ route('logout') }}">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 mb-5">Manage your waste collection and scheduling with ease. WasteManager simplifies the process and helps you keep your environment clean.</p>
-                    <a class="btn btn-primary btn-xl" href="#about">Learn More</a>
+                    <a class="btn btn-primary btn-xl" href="/schedule">Schedule</a>
                 </div>
             </div>
         </div>

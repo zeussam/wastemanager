@@ -32,6 +32,7 @@ Route::get('/schedule', function () {
 
 Route::post('/schedule', [ScheduleController::class, 'store'])->name('schedule.store');
 Route::get('/pending', [ScheduleController::class, 'display'])->name('pending.display');
+Route::get('/review', [ScheduleController::class, 'rate'])->name('review.rate');
 
 
 
