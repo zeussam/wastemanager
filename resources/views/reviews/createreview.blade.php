@@ -30,7 +30,26 @@
             margin-bottom: 5px;
         }
 
-        .form-group input[type="number"],
+        .rating input[type="radio"] {
+            display: none;
+        }
+
+        .rating label {
+            float: right;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .rating label:before {
+            content: '\2606';
+            margin-right: 5px;
+        }
+
+        .rating input[type="radio"]:checked ~ label:before {
+            content: '\2605';
+            color: #e2b406;
+        }
+
         .form-group textarea {
             width: 100%;
             padding: 10px;
@@ -66,7 +85,13 @@
 
             <div class="form-group">
                 <label for="rating">Rating:</label>
-                <input type="number" name="rating" id="rating" min="1" max="5" required>
+                <div class="rating">
+                    <input type="radio" name="rating" id="star5" value="5" required><label for="star5"></label>
+                    <input type="radio" name="rating" id="star4" value="4"><label for="star4"></label>
+                    <input type="radio" name="rating" id="star3" value="3"><label for="star3"></label>
+                    <input type="radio" name="rating" id="star2" value="2"><label for="star2"></label>
+                    <input type="radio" name="rating" id="star1" value="1"><label for="star1"></label>
+                </div>
             </div>
 
             <div class="form-group">
