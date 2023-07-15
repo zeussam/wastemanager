@@ -13,6 +13,8 @@
         .alert {
             padding: 10px;
             margin-bottom: 20px;
+            background-color: #28a745;
+            color: #fff;
         }
 
         form {
@@ -54,7 +56,7 @@
         <h1>Create Review</h1>
 
         @if (session('success'))
-            <div class="alert alert-success">
+            <div class="alert">
                 {{ session('success') }}
             </div>
         @endif

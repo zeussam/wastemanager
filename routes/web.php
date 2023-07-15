@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\GarbageCollectorController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ViewreviewsController;
 
 
 /*
@@ -34,7 +35,7 @@ Route::post('/schedule', [ScheduleController::class, 'store'])->name('schedule.s
 Route::get('/pending', [ScheduleController::class, 'display'])->name('pending.display');
 Route::get('/review', [ScheduleController::class, 'rate'])->name('review.rate');
 
-
+Route::get('/viewreviews', [ViewreviewsController::class, 'index'])->name('reviews.index');
 
 Route::delete('admin/roles', [RoleController::class, 'destroy'])->name('admin.roles.destroy')->middleware('web');
 Route::delete('admin/permissions', [PermissionController::class, 'destroy'])->name('admin.permissions.destroy')->middleware('web');

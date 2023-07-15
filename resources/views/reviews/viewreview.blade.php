@@ -13,12 +13,17 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         th, td {
-            padding: 8px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
         }
 
         .py-12 {
@@ -30,7 +35,7 @@
     <div class="container">
         <h1>Reviews</h1>
 
-        <table class="table">
+        <table>
             <thead>
                 <tr>
                     <th>User</th>
@@ -50,4 +55,5 @@
         </table>
     </div>
 </x-app-layout>
+
 

@@ -18,18 +18,20 @@ class ReviewController extends Controller
             'rating' => 'required|integer|between:1,5',
             'review' => 'required|max:255',
         ]);
-
+    
         $review = Review::create([
             'user_id' => auth()->user()->id,
             'rating' => $validatedData['rating'],
             'review' => $validatedData['review'],
         ]);
-
-        // Optionally, you can add a success flash message
+    
+        // Set the success flash message
         session()->flash('success', 'Review submitted successfully.');
-
-        return redirect()->route('reviews.index');
+    
+        // Redirect back to the previous page
+        return back();
     }
+    
 
     public function index()
     {
