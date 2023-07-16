@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-  use App\Models\Schedule;
-  use Illuminate\Http\RedirectResponse;
+use App\Models\Schedule;
+use Illuminate\Http\RedirectResponse;
+use App\Models\User;
+use App\Notifications\PickupScheduledNotification;
+
 
 class ScheduleController extends Controller
 {
@@ -39,3 +42,5 @@ public function store(Request $request)
         return view('reviews/createreview');
     }
 }
+$user = User::find(1); // Find the user you want to notify
+$user->notify(new PickupScheduledNotification());

@@ -1,112 +1,112 @@
 <x-app-layout>
     <div class="py-12">
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Garbage Collector</title>
-            <style>
-                .garbage-table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin-top: 20px;
-                }
+        <style>
+            .garbage-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
 
-                .garbage-table th,
-                .garbage-table td {
-                    padding: 8px;
-                    text-align: left;
-                    border-bottom: 1px solid #ddd;
-                }
+            .garbage-table th,
+            .garbage-table td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ccc;
+            }
 
-                .garbage-table th {
-                    background-color: #f2f2f2;
-                }
+            .garbage-table th {
+                background-color: #f2f2f2;
+            }
 
-                .status-action {
-                    display: flex;
-                    align-items: center;
-                }
+            .status-action {
+                display: flex;
+                align-items: center;
+            }
 
-                .dropdown {
-                    position: relative;
-                    display: inline-block;
-                }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
 
-                .dropdown-toggle {
-                    background-color: #ddd;
-                    border: none;
-                    color: #333;
-                    padding: 10px;
-                    cursor: pointer;
-                    width: 120px;
-                    text-align: center;
-                    font-size: 14px;
-                    font-weight: bold;
-                    text-transform: capitalize;
-                    transition: background-color 0.3s ease;
-                    border-radius: 5px;
-                    margin-right: 10px; /* Increased separation */
-                }
+            .dropdown-toggle {
+                background-color: #ddd;
+                border: none;
+                color: #333;
+                padding: 10px;
+                cursor: pointer;
+                width: 120px;
+                text-align: center;
+                font-size: 14px;
+                font-weight: bold;
+                text-transform: capitalize;
+                transition: background-color 0.3s ease;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
 
-                .dropdown-menu {
-                    position: absolute;
-                    background-color: #f9f9f9;
-                    min-width: 120px;
-                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                    z-index: 1;
-                    display: none;
-                }
+            .dropdown-menu {
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 120px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                display: none;
+            }
 
-                .dropdown-menu a {
-                    color: #333;
-                    padding: 8px 12px;
-                    text-decoration: none;
-                    display: block;
-                    cursor: pointer;
-                    transition: background-color 0.3s ease;
-                }
+            .dropdown-menu a {
+                color: #333;
+                padding: 8px 12px;
+                text-decoration: none;
+                display: block;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
 
-                .dropdown-menu a:hover {
-                    background-color: #ddd;
-                }
+            .dropdown-menu a:hover {
+                background-color: #ddd;
+            }
 
-                .dropdown:hover .dropdown-menu {
-                    display: block;
-                }
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
 
-                .dropdown.active .dropdown-toggle {
-                    background-color: lightgreen;
-                }
+            .dropdown.active .dropdown-toggle {
+                background-color: lightgreen;
+            }
 
-                .update-button {
-                    background-color: #4CAF50;
-                    color: white;
-                    border: none;
-                    padding: 5px 10px;
-                    text-align: center;
-                    text-decoration: none;
-                    cursor: pointer;
-                    font-size: 14px;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    border-radius: 5px;
-                }
+            .update-button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 5px 10px;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: bold;
+                text-transform: uppercase;
+                border-radius: 5px;
+            }
 
-                h1 {
-                    text-align: center;
-                }
-            </style>
-        </head>
-        <body>
+            h1 {
+                text-align: center;
+            }
+            .new{
+                background-color: #808080;
+                color: white;
+            }
+        
+        </style>
+
         @if (session('success'))
             <div class="alert alert-success"
-                 style="background-color: lightgreen; width: 100%; padding: 10px; margin-bottom: 10px;">
+                 style="background-color: #28a745; color: #fff; padding: 10px; margin-bottom: 10px;">
                 {{ session('success') }}
             </div>
         @endif
-
+        <div class="new">
         <h1>Garbage Collector</h1>
-
+        </div>
         <table class="garbage-table">
             <tr>
                 <th>ID</th>
@@ -163,8 +163,7 @@
                 form.elements.status.value = status;
             }
         </script>
-        </body>
-        </html>
     </div>
 </x-app-layout>
+
 
