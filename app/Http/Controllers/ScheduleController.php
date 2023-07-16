@@ -34,4 +34,8 @@ public function store(Request $request)
         $rows = Schedule::all();
         return view('customercollection', ['rows' => $rows]);
     }
+    public function rate()
+    {
+        return view('reviews/createreview');
+    }
 }

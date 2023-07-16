@@ -114,8 +114,8 @@
       <div class="col col-3" data-label="Time">{{ $row->time }}</div>
       <div class="col col-4" data-label="Status">{{ $row->status }}</div>
        <div class="col col-5" data-label="Actions">
-        @if ($row->status == 'completed')
-          <a class="review-button" href="{{ route('review', ['id' => $row->id]) }}">Review</a>
+        @if ($row->status == 'Completed')
+          <a class="review-button" href="{{ route('review.rate') }}">Review</a>
         @endif
     </li>
     @endforeach

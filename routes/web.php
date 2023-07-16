@@ -8,6 +8,10 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ScheduleController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\GarbageCollectorController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ViewreviewsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,13 +33,19 @@ Route::get('/schedule', function () {
 
 Route::post('/schedule', [ScheduleController::class, 'store'])->name('schedule.store');
 Route::get('/pending', [ScheduleController::class, 'display'])->name('pending.display');
+Route::get('/review', [ScheduleController::class, 'rate'])->name('review.rate');
 
-
+Route::get('/viewreviews', [ViewreviewsController::class, 'index'])->name('reviews.index');
 
 Route::delete('admin/roles', [RoleController::class, 'destroy'])->name('admin.roles.destroy')->middleware('web');
 Route::delete('admin/permissions', [PermissionController::class, 'destroy'])->name('admin.permissions.destroy')->middleware('web');
 
+Route::get('/garbage', [GarbageCollectorController::class, 'index'])->name('garbage');
+Route::put('/update-status/{id}', [GarbageCollectorController::class, 'updateStatus'])->name('updateStatus');
 
+Route::get('/reviews/create', [ReviewController::class, 'create'])->name('reviews.create');
+Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
