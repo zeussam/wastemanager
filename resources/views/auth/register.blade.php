@@ -1,3 +1,9 @@
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.1.8/js/intlTelInput.min.js"></script>
+ <style>
+
+ @import url(https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.1.8/css/intlTelInput.css);
+
+ </style>
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -18,16 +24,49 @@
 
         <!-- Phone Number -->
         <div class="mt-4">
-            <x-input-label for="phone" :value="__('Phone Number')" />
-            <x-text-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autocomplete="tel" />
-            <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+            <x-input-label for="cnum" :value="__('Phone Number')" />
+            <x-text-input id="phone-number" class="block mt-1 w-full" type="tel" name="cnum" :value="old('cnum')" required autocomplete="tel" />
+            <script>
+  var phoneInput = document.getElementById('phone-number');
+  var phoneInputOptions = {
+    initialCountry: 'ke',
+  };
+  intlTelInput(phoneInput, phoneInputOptions);
+</script>
+            <x-input-error :messages="$errors->get('cnum')" class="mt-2" />
         </div>
 
         <!-- Location -->
         <div class="mt-4">
-            <x-input-label for="location" :value="__('Location')" />
-            <x-text-input id="location" class="block mt-1 w-full" type="text" name="location" :value="old('location')" required autocomplete="address-level1" />
-            <x-input-error :messages="$errors->get('location')" class="mt-2" />
+            <x-input-label for="city" :value="__('City')" />
+            <select name="city">
+  <option value="">Select a city</option>
+  <option value="Nairobi">Nairobi</option>
+  <option value="Mombasa">Mombasa</option>
+  <option value="Kisumu">Kisumu</option>
+  <option value="Nakuru">Nakuru</option>
+  <option value="Eldoret">Eldoret</option>
+  <option value="Nyeri">Nyeri</option>
+  <option value="Naivasha">Naivasha</option>
+  <option value="Meru">Meru</option>
+  <option value="Kakamega">Kakamega</option>
+  <option value="Machakos">Machakos</option>
+  <option value="Thika">Thika</option>
+  <option value="Nanyuki">Nanyuki</option>
+  <option value="Malindi">Malindi</option>
+  <option value="Lamu">Lamu</option>
+  <option value="Kitale">Kitale</option>
+  <option value="Voi">Voi</option>
+  <option value="Nanyanga">Nanyanga</option>
+  <option value="Narok">Narok</option>
+  <option value="Kericho">Kericho</option>
+</select>
+            <x-input-error :messages="$errors->get('city')" class="mt-2" />
+        </div>
+        <div class="mt-4">
+            <x-input-label for="estate" :value="__('Estate')" />
+            <x-text-input id="estate" class="block mt-1 w-full" type="text" name="estate" :value="old('estate')" required autocomplete="address-level1" />
+            <x-input-error :messages="$errors->get('estate')" class="mt-2" />
         </div>
 
         <!-- Password -->

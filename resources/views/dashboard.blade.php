@@ -43,8 +43,13 @@
                 @auth
                 <form class="ml-auto" method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="btn btn-link nav-link">Logout</button>
+                    <button style="margin-right:25px;" type="submit" class="btn btn-link nav-link">Logout</button>
                 </form>
+                 @role('admin')
+                     <x-nav-link  :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+                        {{ __('Admin') }}
+                    </x-nav-link>  
+                    @endrole
                 @else
                 <div class="ml-auto">
                     <a href="{{ route('login') }}" class="nav-link">Log in</a>
@@ -57,7 +62,7 @@
         </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead">
+    <header style="background-color:#497e92" class="masthead">
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">

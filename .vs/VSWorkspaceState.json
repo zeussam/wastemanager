@@ -2,14 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Http\\Controllers\\Admin",
-    "\\app\\Models",
-    "\\database",
-    "\\database\\migrations",
+    "\\app\\Http\\Controllers",
     "\\resources",
-    "\\resources\\views\\admin",
-    "\\routes"
+    "\\resources\\views"
   ],
-  "SelectedNode": "\\database\\migrations\\2023_07_12_113527_create_schedule_table.php",
+  "SelectedNode": "\\resources\\views\\staff.blade.php",
   "PreviewInSolutionExplorer": false
 }

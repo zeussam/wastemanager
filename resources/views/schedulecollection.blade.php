@@ -18,7 +18,7 @@ $headings: #47536A;
 $header: #646E8A;
 $font: #A4A9C5;
 $bg: #ECEEF4;
-$hint: #167F92;
+$hint: #ef6339;
 
 html {
   background-color: #E8F0FA;
@@ -47,7 +47,7 @@ html {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   font-weight: 900;
-  background-color: #167F92;
+  background-color: #ef6339;
   padding: 20px;
   color: #fff;
   font-size: 1.2rem;
@@ -211,7 +211,7 @@ button {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1px;
-  background-color: #167F92;
+  background-color: #ef6339;
   border: 1px solid $outline;
   color: #fff;
   padding: 18px;
@@ -225,7 +225,7 @@ button {
 }
 
 button:hover {
-  background-color: #1293e1;
+  background-color: #232628;
   cursor: pointer;
 }
 
@@ -275,10 +275,10 @@ button:active {
             </div>
             <div class="form__contact">
                 <div class="cname">
-                    <label for="cname">Name</label> <input value="{{ Auth::user()->name }}" name="cname" id="cname" type="text">
+                    <label for="cname">Name</label> <input value="{{ Auth::user()->name }}" name="cname" id="cname" type="text" readonly>
                 </div>
                 <div class="cnum">
-                    <label for="cnum">Phone Number</label> <input type="tel" id="phone-number" name="cnum">
+                    <label for="cnum">Phone Number</label> <input value="{{ Auth::user()->cnum }}" type="tel" id="phone-number" name="cnum" readonly>
                     <script>
   var phoneInput = document.getElementById('phone-number');
   var phoneInputOptions = {
@@ -289,33 +289,13 @@ button:active {
                 </div>
 
                 <div class="location">
-                <label for="city">City</label> 
-                <select name="city">
-  <option value="">Select a city</option>
-  <option value="Nairobi">Nairobi</option>
-  <option value="Mombasa">Mombasa</option>
-  <option value="Kisumu">Kisumu</option>
-  <option value="Nakuru">Nakuru</option>
-  <option value="Eldoret">Eldoret</option>
-  <option value="Nyeri">Nyeri</option>
-  <option value="Naivasha">Naivasha</option>
-  <option value="Meru">Meru</option>
-  <option value="Kakamega">Kakamega</option>
-  <option value="Machakos">Machakos</option>
-  <option value="Thika">Thika</option>
-  <option value="Nanyuki">Nanyuki</option>
-  <option value="Malindi">Malindi</option>
-  <option value="Lamu">Lamu</option>
-  <option value="Kitale">Kitale</option>
-  <option value="Voi">Voi</option>
-  <option value="Nanyanga">Nanyanga</option>
-  <option value="Narok">Narok</option>
-  <option value="Kericho">Kericho</option>
+                 <label for="city">City</label>
+  <input name="city" value="{{ Auth::user()->city }}" id="city" type="text" readonly>
 </select>
 </div>
  <div class="location">
   <label for="estate">Estate</label>
-  <input name="estate" placeholder="e.g. kasarani" id="estate" type="text" >
+  <input name="estate" value="{{ Auth::user()->estate }}" placeholder="e.g. kasarani" id="estate" type="text" readonly>
   <input name="status" id="status" value="pending" type="hidden" >
 </div>
 <div class="form__confirmation">

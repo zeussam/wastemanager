@@ -42,5 +42,3 @@ public function store(Request $request)
         return view('reviews/createreview');
     }
 }
-$user = User::find(1); // Find the user you want to notify
-$user->notify(new PickupScheduledNotification());

@@ -38,7 +38,7 @@
     }
 
     .table-header {
-      background-color: #167F92;
+      background-color: #ef6339;
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 0.03em;
