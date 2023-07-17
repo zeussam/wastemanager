@@ -15,12 +15,14 @@
             }
 
             .garbage-table th {
-                background-color: #f2f2f2;
+                background-color: #232628;
+                color: white;
             }
 
             .status-action {
                 display: flex;
                 align-items: center;
+
             }
 
             .dropdown {
@@ -29,9 +31,9 @@
             }
 
             .dropdown-toggle {
-                background-color: #ddd;
+                background-color: #232628;
                 border: none;
-                color: #333;
+                color: white;
                 padding: 10px;
                 cursor: pointer;
                 width: 120px;
@@ -92,7 +94,7 @@
                 text-align: center;
             }
             .new{
-                background-color: #808080;
+                background-color: #ef6339;
                 color: white;
             }
         

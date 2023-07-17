@@ -58,7 +58,7 @@
         }
 
         .btn-primary {
-            background-color: #007bff;
+            background-color: #ef6339;
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
@@ -67,7 +67,7 @@
         }
 
         .btn-primary:hover {
-            background-color: #0069d9;
+            background-color: #232628;
         }
     </style>
 

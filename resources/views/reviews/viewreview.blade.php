@@ -23,7 +23,7 @@
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #ef6339;
         }
 
         .py-12 {

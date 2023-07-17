@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views"
   ],
-  "SelectedNode": "\\resources\\views\\staff.blade.php",
+  "SelectedNode": "\\.env",
   "PreviewInSolutionExplorer": false
 }

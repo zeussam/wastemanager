@@ -13,6 +13,11 @@ class GarbageCollectorController extends Controller
     public function index()
     {
         $pendingOperations = Operation::where('status', 'Pending')->get();
+        return view('staffview', compact('pendingOperations'));
+    }
+     public function job()
+    {
+        $pendingOperations = Operation::where('status', 'Pending')->get();
         return view('staff', compact('pendingOperations'));
     }
 

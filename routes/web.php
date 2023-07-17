@@ -31,6 +31,7 @@ Route::get('/schedule', function () {
     return view('schedulecollection');
 });
 
+
 Route::post('/schedule', [ScheduleController::class, 'store'])->name('schedule.store');
 Route::get('/pending', [ScheduleController::class, 'display'])->name('pending.display');
 Route::get('/review', [ScheduleController::class, 'rate'])->name('review.rate');
@@ -40,7 +41,8 @@ Route::get('/viewreviews', [ViewreviewsController::class, 'index'])->name('revie
 Route::delete('admin/roles', [RoleController::class, 'destroy'])->name('admin.roles.destroy')->middleware('web');
 Route::delete('admin/permissions', [PermissionController::class, 'destroy'])->name('admin.permissions.destroy')->middleware('web');
 
-Route::get('/garbage', [GarbageCollectorController::class, 'index'])->name('garbage');
+Route::get('/staff', [GarbageCollectorController::class, 'index'])->name('staff');
+Route::get('/jobs', [GarbageCollectorController::class, 'job'])->name('jobs');
 Route::put('/update-status/{id}', [GarbageCollectorController::class, 'updateStatus'])->name('updateStatus');
 
 Route::get('/reviews/create', [ReviewController::class, 'create'])->name('reviews.create');
@@ -61,9 +63,7 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::resource('/roles',RoleController::class);
      Route::resource('/permissions',PermissionController::class);
 });
-Route::get('/staff', function () {
-    return view('staff');
-})->middleware(['auth', 'role:staff'])->name('staff');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
