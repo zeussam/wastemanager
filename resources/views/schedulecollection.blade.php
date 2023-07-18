@@ -232,6 +232,30 @@ button:hover {
 button:active {
   background-color: #1083c8;
 }
+success-message {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.success-message::before,
+.success-message::after {
+  content: '';
+  display: table;
+}
+
+.success-message::after {
+  clear: both;
+}
+
+.success-message span {
+  display: inline-block;
+  margin-top: 5px;
+}
+
 
         </style>
 </head>
@@ -244,6 +268,12 @@ button:active {
         <div class="form__name">
             Scheduling Form
         </div>
+        @if (session('success'))
+    <div class="success-message">
+        <span>{{ session('success') }}</span>
+    </div>
+@endif
+       
         <div class="time__container">
             <div class="section">
                 <div class="box">
