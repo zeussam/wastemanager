@@ -9,6 +9,11 @@ use App\Models\Schedule;
 use Illuminate\Http\RedirectResponse;
 use App\Models\User;
 use App\Notifications\PickupScheduledNotification;
+use App\Mail\WastePickupScheduled;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
+
+
 
 
 class ScheduleController extends Controller
@@ -28,7 +33,19 @@ public function store(Request $request)
     $schedule->save();
 
     // Redirect or perform other actions after saving the data
+    // Get the logged-in user
+    $user = Auth::user();
+    
+    $name = $user->name; // Assuming the user object contains the name property
+    $email = $user->email; // Assuming the user object contains the email property
+    
+    Mail::to($user->email)->send(new WastePickupScheduled($name, $email));
+    
+    
 
+
+   // Trigger email
+   Mail::to($user->email)->send(new WastePickupScheduled($name, $email));
     // Example redirect:
     return redirect()->back()->with('success', 'Schedule saved successfully');
 }
